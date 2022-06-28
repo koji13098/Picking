@@ -2,10 +2,6 @@
 
 session_start();
 
-var_dump($_SERVER['REQUEST_METHOD']);
-var_dump($_GET);
-var_dump($_POST);
-
 $pickingLists = $_SESSION['pickingLists'];
 sort($pickingLists);
 
@@ -75,5 +71,3 @@ if ($pickNum >= count($pickingLists)) {
 
 </html>
 <?php
-var_dump($_SESSION['invoiceNumbers']);
-var_dump($_SESSION['pickingLists']);

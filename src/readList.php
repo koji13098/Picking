@@ -31,9 +31,6 @@ function getPickList($link, int $invoiceNum): mysqli_result
 
 $link = dbConnect();
 
-var_dump($_SERVER['REQUEST_METHOD']);
-var_dump($_POST);
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($invoiceNum = trim($_POST['invoiceNum'])) {
         if (!in_array($invoiceNum, $_SESSION['invoiceNumbers'], true)) {
@@ -95,7 +92,7 @@ mysqli_close($link);
         <form action="index.php" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) > 0) ? "return popupConfirm('戻りますか？')" : "" ?>">
             <input type="submit" value="戻る">
         </form>
-        <form action="pickItem.php" method="get">
+        <form action="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "readList.php" : "pickItem.php"; ?>" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "return alert('送り状が読み込まれていません')" : "" ?>">
             <input type="hidden" name="pickNum" value="0">
             <input type="submit" value="ピッキング">
         </form>
@@ -103,6 +100,3 @@ mysqli_close($link);
 </body>
 
 </html>
-<?php
-var_dump($_SESSION['invoiceNumbers']);
-var_dump($_SESSION['pickingLists']);
