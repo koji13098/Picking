@@ -1,3 +1,5 @@
+# Heroku デプロイ用
+
 FROM php:8-apache
 
 RUN apt-get update \
@@ -10,3 +12,6 @@ WORKDIR /var/www/html
 
 COPY ./src /var/www/html
 COPY ./docker/app/php.ini /usr/local/etc/php/php.ini
+
+COPY ./docker/app/run-apache2.sh /usr/local/bin/
+CMD [ "run-apache2.sh" ]
