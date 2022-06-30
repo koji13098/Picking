@@ -8,7 +8,7 @@
 
 <body>
     <h1>照合OK</h1>
-    <form action="index.php" method="get">
+    <form action="readList.php" method="get">
         <input type="submit" value="戻る">
     </form>
 
