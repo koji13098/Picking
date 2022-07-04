@@ -33,7 +33,6 @@ if ($pickNum >= count($pickingLists)) {
 </head>
 
 <body>
-    <script src="lib/popup.js"></script>
     <h1>バラピッキング</h1>
     <h2>品番読取</h2>
     <p><?php echo $pickNum + 1; ?>/<?php echo count($pickingLists); ?>件</p>
@@ -67,6 +66,7 @@ if ($pickNum >= count($pickingLists)) {
             <input type="submit" value="スキップ">
         </form>
     </footer>
+    <script src="lib/popup.js"></script>
 </body>
 
 </html>

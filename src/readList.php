@@ -4,7 +4,7 @@ require_once __DIR__ . "/lib/mysqli.php";
 
 session_start();
 
-function getPickList($link, int $invoiceNum): mysqli_result
+function getPickList($link, string $invoiceNum): mysqli_result
 {
     $sql = <<<EOT
         SELECT
@@ -77,7 +77,6 @@ mysqli_close($link);
 </head>
 
 <body>
-    <script src="lib/popup.js"></script>
     <header>バラピッキング</header>
     <h2 class="title">送り状番号読取</h2>
     <div class="body">
@@ -97,6 +96,7 @@ mysqli_close($link);
             <input type="submit" value="ピッキング">
         </form>
     </footer>
+    <script src="lib/popup.js"></script>
 </body>
 
 </html>
