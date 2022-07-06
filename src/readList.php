@@ -80,9 +80,9 @@ mysqli_close($link);
     <header>バラピッキング</header>
     <h2 class="title">送り状番号読取</h2>
     <div class="body">
-        <form action="readList.php" method="post">
+        <form class="readlist" action="readList.php" method="post">
             <label for="invoiceNum">送り状バーコードを読んでください</label>
-            <input type="text" name="invoiceNum" id="invoiceNum">
+            <input class="input" type="text" name="invoiceNum" id="invoiceNum">
             <input type="submit" value="読込">
             <p>枚数：<?php echo count($_SESSION['invoiceNumbers']); ?></p>
         </form>

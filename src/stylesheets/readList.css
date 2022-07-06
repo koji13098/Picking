@@ -1,14 +1,52 @@
+/* body {
+  width: 400px;
+} */
+
 header {
   background-color: #0000ff;
   color: white;
-  font-size: large;
+  font-size: 20px;
+  text-align: center;
 }
 
 .title {
   background-color: aquamarine;
-  font-size: medium;
+  font-size: 20px;
+  text-align: center;
+  font-weight: normal;
 }
 
 footer {
   background-color: aquamarine;
+  display: flex;
+}
+
+.input {
+  background-color: #ffc;
+  border-style: hidden;
+}
+
+.readlist {
+  text-align: center;
+}
+
+.picknum {
+  text-align: right;
+}
+
+.value {
+  background-color: #eee;
+}
+
+.location-amount {
+  display: flex;
+}
+
+.location {
+  flex: 1;
+}
+
+.amount {
+  text-align: right;
+  flex: 1;
 }
