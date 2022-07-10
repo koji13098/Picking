@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($result->num_rows > 0) {
                 $_SESSION['invoiceNumbers'][] = $invoiceNum;
                 while ($data = mysqli_fetch_assoc($result)) {
-                    $item_number = trim(substr($data['item_number'], 0, 13)) . substr($data['item_number'], -7, 3);
+                    $item_number = trim(substr($data['item_number'], 0, 13)) . substr($data['item_number'], 14, 3);
                     $_SESSION['pickingLists'][] = [
                         'location' => $data['location'],
                         'readNum' => count($_SESSION['invoiceNumbers']),
@@ -91,7 +91,7 @@ mysqli_close($link);
         <form action="index.php" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) > 0) ? "return popupConfirm('戻りますか？')" : "" ?>">
             <input type="submit" value="戻る">
         </form>
-        <form action="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "readList.php" : "pickItem.php"; ?>" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "return alert('送り状が読み込まれていません')" : "" ?>">
+        <form action="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "readList.php" : "pickItems.php"; ?>" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "return alert('送り状が読み込まれていません')" : "" ?>">
             <input type="hidden" name="pickNum" value="0">
             <input type="submit" value="ピッキング">
         </form>
