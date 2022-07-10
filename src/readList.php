@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($result->num_rows > 0) {
                 $_SESSION['invoiceNumbers'][] = $invoiceNum;
                 while ($data = mysqli_fetch_assoc($result)) {
-                    $item_number = trim(substr($data['item_number'], 0, 13)) . substr($data['item_number'], 14, 3);
+                    $item_number = trim(substr($data['item_number'], 0, 13)) . substr($data['item_number'], 13, 3);
                     $_SESSION['pickingLists'][] = [
                         'location' => $data['location'],
                         'readNum' => count($_SESSION['invoiceNumbers']),
