@@ -2,7 +2,22 @@ const video = document.getElementById("js-video");
 const canvas = document.getElementById("js-canvas");
 const ctx = canvas.getContext("2d");
 const input = document.getElementById("js-input");
+const popupCorrect = document.getElementById("js-popup-correct");
+const popupIncorrect = document.getElementById("js-popup-incorrect");
+const popupClose = document.getElementById("js-popup-close");
 
+function checkItemNumber(itemNumber) {
+  if (true) {
+    popupCorrect.classList.add("popup-show");
+  } else {
+    popupIncorrect.classList.add("popup-show");
+  }
+}
+
+popupClose.addEventListener('click', () => {
+  popupCorrect.classList.remove("popup-show");
+  popupIncorrect.classList.remove("popup-show");
+});
 
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices
@@ -23,7 +38,8 @@ const timer = setInterval(() => {
 
   if (code) {
     input.value = code.data;
-    document.form.submit();
+    // document.form.submit();
+    checkItemNumber(code.data);
     clearInterval(timer);
   }
 }, 500);

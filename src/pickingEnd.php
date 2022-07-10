@@ -7,7 +7,7 @@
     <title>バラピッキング</title>
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column;  justify-content: center; align-items: center; background-color: #0f0;">
     <h1>照合OK</h1>
     <form action="readList.php" method="get">
         <input type="submit" value="戻る">

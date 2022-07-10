@@ -80,6 +80,27 @@ if ($pickNum >= count($pickingLists)) {
         </form>
     </footer>
 
+    <div class="popup popup-correct" id="js-popup-correct">
+        <div class="popup-correct">
+            <p>読込No:<span class="value"><?php echo $pickingLists[$pickNum]['readNum']; ?></span></p>
+            <p>品番:<br>
+                <span class="value"><?php echo $pickingLists[$pickNum]['item_number']; ?></span>
+            </p>
+            <div id="js-amount">数量:
+                <span class="value">&nbsp;<?php echo $pickingLists[$pickNum]['amount']; ?></span>
+            </div>
+            <button class="button" id="js-popup-close">OK</button>
+        </div>
+    </div>
+
+    <div class="popup popup-incorrect" id="js-popup-incorrect">
+        <h3>照合エラー</h3>
+        <p>品番違い<br>
+            <span class="value"><?php echo $pickingLists[$pickNum]['item_number']; ?></span>
+        </p>
+        <button class="button" id="js-popup-close">確認</button>
+    </div>
+
     <script src="./lib/popup.js"></script>
     <script src="./lib/jsQR.js"></script>
     <script src="./lib/pickItems.js"></script>
