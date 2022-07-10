@@ -92,6 +92,18 @@ INSERT INTO orders (
 );
 EOT,
 
+  <<<EOT
+INSERT INTO orders (
+  invoice,
+  item_number,
+  amount
+) VALUES (
+  "987654321",
+  "KF100N2SS-JAN0000001",
+  2
+);
+EOT,
+
 ];
 
 foreach ($sqls as $sql) {
