@@ -6,7 +6,7 @@ $pickingLists = $_SESSION['pickingLists'];
 sort($pickingLists);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $item_number = trim(substr($_POST['item_number'], 0, 13)) . substr($_POST['item_number'], 14, 3);
+    $item_number = trim(substr($_POST['item_number'], 0, 13)) . substr($_POST['item_number'], 13, 3);
     if ($item_number === $pickingLists[(int)$_POST['pickNum']]['item_number']) {
         $pickNum = (int)$_POST['pickNum'];
         echo '<script>alert("読込No:' . $pickingLists[$pickNum]['readNum'] . '\n' . $pickingLists[$pickNum]['item_number'] . '\n数量: ' . $pickingLists[$pickNum]['amount'] . '");</script>';
