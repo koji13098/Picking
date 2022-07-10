@@ -30,7 +30,7 @@ footer {
   text-align: center;
 }
 
-.picknum {
+.pick-num {
   text-align: right;
 }
 
@@ -49,4 +49,9 @@ footer {
 .amount {
   text-align: right;
   flex: 1;
+}
+
+.video {
+  margin: 0;
+  padding: 0;
 }

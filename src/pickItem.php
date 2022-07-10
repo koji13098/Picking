@@ -37,7 +37,7 @@ if ($pickNum >= count($pickingLists)) {
     <header>バラピッキング</header>
     <h2 class="title">品番読取</h2>
     <div class="main">
-        <p class="picknum"><?php echo $pickNum + 1; ?>/&nbsp;<?php echo count($pickingLists); ?>&nbsp;件</p>
+        <p class="pick-num"><?php echo $pickNum + 1; ?>/&nbsp;<?php echo count($pickingLists); ?>&nbsp;件</p>
         <p>読込No:<span class="value"><?php echo $pickingLists[$pickNum]['readNum']; ?></span></p>
         <div>
             <p>送り状:<br>

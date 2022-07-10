@@ -38,7 +38,7 @@ if ($pickNum >= count($pickingLists)) {
     <header>バラピッキング</header>
     <h2 class="title">品番読取</h2>
     <div class="main" id="js-pickingList">
-        <p class="picknum" id="js-pick-num"><?php echo $pickNum + 1; ?>/&nbsp;<?php echo count($pickingLists); ?>&nbsp;件</p>
+        <p class="pick-num" id="js-pick-num"><?php echo $pickNum + 1; ?>/&nbsp;<?php echo count($pickingLists); ?>&nbsp;件</p>
         <p>読込No:<span class="value"><?php echo $pickingLists[$pickNum]['readNum']; ?></span></p>
         <div id="js-invoice-num">
             <p>送り状:<br>
@@ -67,7 +67,7 @@ if ($pickNum >= count($pickingLists)) {
         </form>
     </div>
 
-    <video id="js-video" width="640" height="480" autoplay playsinline></video>
+    <video class="video" id="js-video" width="640" height="480" autoplay playsinline></video>
     <canvas id="js-canvas" width="640" height="480" style="display: none;"></canvas>
 
     <footer>
