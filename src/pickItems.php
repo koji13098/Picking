@@ -7,23 +7,6 @@ sort($pickingLists);
 
 $pickingLists_json = json_encode($pickingLists);
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     $item_number = trim(substr($_POST['item_number'], 0, 13)) . substr($_POST['item_number'], 13, 3);
-//     if ($item_number === $pickingLists[(int)$_POST['pickNum']]['item_number']) {
-//         $pickNum = (int)$_POST['pickNum'];
-//         echo '<script>alert("読込No:' . $pickingLists[$pickNum]['readNum'] . '\n' . $pickingLists[$pickNum]['item_number'] . '\n数量: ' . $pickingLists[$pickNum]['amount'] . '");</script>';
-//         $pickNum++;
-//     } else {
-//         $pickNum = (int)$_POST['pickNum'];
-//         echo '<script>alert("品番違い\n' . $_POST['item_number'] . '");</script>';
-//     }
-// } else {
-//     $pickNum = (int)$_GET['pickNum'];
-// }
-// if ($pickNum >= count($pickingLists)) {
-//     header("Location: pickingEnd.php");
-// }
-
 ?>
 
 <script>
