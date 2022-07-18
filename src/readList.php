@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($result->num_rows > 0) {
                 $_SESSION['invoiceNumbers'][] = $invoiceNum;
                 while ($data = mysqli_fetch_assoc($result)) {
-                    $item_number = trim(substr($data['item_number'], 0, 13)) . substr($data['item_number'], 13, 3);
+                    $item_number = trim($data['item_number']);
                     $_SESSION['pickingLists'][] = [
                         'location' => $data['location'],
                         'readNum' => count($_SESSION['invoiceNumbers']),
@@ -71,7 +71,7 @@ mysqli_close($link);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets\readList.css">
+    <link rel="stylesheet" href="stylesheets\style.css">
 
     <title>バラピッキング</title>
 </head>
@@ -79,8 +79,8 @@ mysqli_close($link);
 <body>
     <header>バラピッキング</header>
     <h2 class="title">送り状番号読取</h2>
-    <div class="body">
-        <form class="read-list" action="readList.php" method="post">
+    <div class="main">
+        <form class="read-list-form" action="readList.php" method="post">
             <label for="invoiceNum">送り状バーコードを読んでください</label>
             <input class="input" type="text" name="invoiceNum" id="invoiceNum">
             <input type="submit" value="読込">
@@ -88,12 +88,12 @@ mysqli_close($link);
         </form>
     </div>
     <footer>
-        <form action="index.php" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) > 0) ? "return popupConfirm('戻りますか？')" : "" ?>">
-            <input type="submit" value="戻る">
+        <form action="index.php" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) > 0) ? "return popupConfirm('読み込んだ送り状番号をすべて破棄します。よろしいでしょうか？')" : "" ?>">
+            <button type="submit">戻る</button>
         </form>
         <form action="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "readList.php" : "pickItems.php"; ?>" method="get" onsubmit="<?php echo (count($_SESSION['invoiceNumbers']) === 0) ? "return alert('送り状が読み込まれていません')" : "" ?>">
             <input type="hidden" name="pickNum" value="0">
-            <input type="submit" value="ピッキング">
+            <button type="submit">ピッキング</button>
         </form>
     </footer>
     <script src="lib/popup.js"></script>

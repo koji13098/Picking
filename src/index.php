@@ -12,11 +12,17 @@ session_destroy();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>一覧</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>検品システム</title>
 </head>
 
 <body>
-    <a href="readList.php">ピッキング</a>
+    <header>検品システム v0.1</header>
+    <ol>
+        <li>
+            <a href="readList.php">ピッキング</a>
+        </li>
+    </ol>
 </body>
 
 </html>
