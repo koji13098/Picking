@@ -14,7 +14,7 @@ function cameraOn() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     return navigator.mediaDevices
       .getUserMedia({
-        video: true
+        video: { facingMode: "environment" }
       })
       .then((stream) => {
         video.srcObject = stream;
@@ -53,7 +53,7 @@ function readItemNumber(data, input) {
 }
 
 function checkItemNumber() {
-  if (item_number1.value == item_number2.value) {
+  if (item_number1.value.substr(0, 16) == item_number2.value.substr(0, 16)) {
     complete.style.display = 'grid';
   } else {
     incorrect.style.display = 'grid';
@@ -113,6 +113,7 @@ incorrect.addEventListener('click', () => {
 document.getElementById("js-popup-incorrect-close").addEventListener('click', () => {
   incorrect.style.display = 'none';
   popupIncorrect.style.display = 'none';
+  title.innerText = "１つ目品番";
   clearInputs([item_number1, item_number2]);
 });
 
