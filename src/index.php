@@ -22,6 +22,9 @@ session_destroy();
         <li>
             <a href="readList.php">ピッキング</a>
         </li>
+        <li>
+            <a href="awase.html">検品DBチェックなし</a>
+        </li>
     </ol>
 </body>
 

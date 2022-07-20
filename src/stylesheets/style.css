@@ -19,16 +19,18 @@ header {
 footer {
   background-color: aquamarine;
   display: flex;
+  margin: 15px 0;
 }
 
 button {
   padding: 0 10px;
-  margin: 5px 20px;
+  margin: 10px 20px;
 }
 
 .input {
   background-color: #ffc;
   border-style: hidden;
+  margin: 20px 0 20px;
 }
 
 .read-list-form {
@@ -49,6 +51,11 @@ button {
 .item_number {
   display: flex;
   justify-content: space-between;
+}
+
+#item-number1,
+#item-number2 {
+  margin: 0 0 20px;
 }
 
 .main .value {

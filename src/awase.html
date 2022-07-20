@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <title>検品DBチェックなし</title>
+</head>
+
+<body>
+  <header>検品DBチェックなし</header>
+  <h2 class="title">１つ目品番</h2>
+  <div class="main">
+    <div class="item-number1">品番1:<br>
+      <input class="input" type="text" name="item-number1" id="item-number1">
+    </div>
+    <div class="item-number2">品番2:<br>
+      <input class="input" type="text" name="item-number2" id="item-number2">
+    </div>
+    <button class="button" id="js-read">読込</button>
+  </div>
+
+  <footer>
+    <button class="button" id="js-quit">戻る</button>
+  </footer>
+
+  <video class="video" id="js-video" width="376" height="667" autoplay playsinline></video>
+  <canvas id="js-canvas" width="376" height="667" style="display: none;"></canvas>
+
+  <div class="complete">照合ＯＫ</div>
+
+  <div class="incorrect">照合エラー</div>
+
+  <div class="popup popup-incorrect" id="js-popup-incorrect">
+    <div class="popup-content">
+      <div>照合エラー<br>
+        <div>
+          <span class="read_item_number1"></span><br>
+          <span class="read_item_number2"></span>
+        </div>
+      </div>
+      <button class="button" id="js-popup-incorrect-close">確認</button>
+    </div>
+  </div>
+
+  <script src="./lib/jsQR.js"></script>
+  <script src="./lib/awase.js"></script>
+</body>
+
+</html>
