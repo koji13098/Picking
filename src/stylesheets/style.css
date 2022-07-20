@@ -151,3 +151,15 @@ form {
 .popup-show {
   display: flex;
 }
+
+.time-card {
+  text-align: center;
+}
+
+.time-card>* {
+  margin: 10px;
+}
+
+.result {
+  display: none;
+}
