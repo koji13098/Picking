@@ -48,10 +48,6 @@ function readQR() {
   return code;
 }
 
-function readItemNumber(data, input) {
-  input.value = data;
-}
-
 function checkItemNumber() {
   if (item_number1.value.substr(0, 16) == item_number2.value.substr(0, 16)) {
     complete.style.display = 'grid';

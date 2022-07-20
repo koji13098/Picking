@@ -27,7 +27,7 @@ $pickingLists_json = json_encode($pickingLists);
 
 <body>
     <header>バラピッキング</header>
-    <h2 class="title">品番読取</h2>
+    <div class="title">品番読取</div>
     <div class="main" id="js-pickingList">
         <div class="pick-num pickNum" id="js-pickNum"></div>
         <div>読込No:<span class="value readNum" id="js-readNum"></span></div>
@@ -50,7 +50,7 @@ $pickingLists_json = json_encode($pickingLists);
         </div>
         <form name="form" action="pickItems.php" method="post">
             <div>
-                <input id="js-input" class="input" type="text" name="item_number">
+                <input id="js-input" class="input" type="text" name="item_number" disabled>
                 <input id="js-submit" type="submit" value="読込">
             </div>
         </form>
@@ -89,6 +89,28 @@ $pickingLists_json = json_encode($pickingLists);
                 </div>
             </div>
             <button class="button" id="js-popup-incorrect-close">確認</button>
+        </div>
+    </div>
+
+    <div class="popup popup-skip" id="js-popup-skip">
+        <div class="popup-content">
+            <div>スキップしてもよろしいですか？
+            </div>
+            <div class="btn-yes-no">
+                <button class="button" id="js-popup-skip-yes">はい</button>
+                <button class="button" id="js-popup-skip-no">いいえ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup-quit" id="js-popup-quit">
+        <div class="popup-content">
+            <div>ピッキング処理を取り消し、読み込んだ送り状番号をすべて破棄します。よろしいですか？
+            </div>
+            <div class="btn-yes-no">
+                <button class="button" id="js-popup-quit-yes">OK</button>
+                <button class="button" id="js-popup-quit-no">キャンセル</button>
+            </div>
         </div>
     </div>
 
