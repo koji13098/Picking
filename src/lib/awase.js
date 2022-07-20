@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 const title = document.querySelector(".title");
 const item_number1 = document.getElementById("item-number1");
 const item_number2 = document.getElementById("item-number2");
+const item_number2_block = document.querySelector(".item-number2");
 const complete = document.querySelector(".complete");
 const incorrect = document.querySelector(".incorrect");
 const popupIncorrect = document.getElementById("js-popup-incorrect");
@@ -54,6 +55,7 @@ function checkItemNumber() {
   } else {
     incorrect.style.display = 'grid';
   }
+  item_number2_block.style.visibility = 'hidden';
 }
 
 function clearInputs(inputs) {
@@ -74,6 +76,7 @@ document.getElementById("js-read").addEventListener('click', () => {
             cameraOff();
             item_number1.value = code.data;
             title.innerText = "２つ目品番";
+            item_number2_block.style.visibility = 'visible';
           }
         }, 500);
       } else {
@@ -115,10 +118,11 @@ document.getElementById("js-popup-incorrect-close").addEventListener('click', ()
 
 document.getElementById("js-quit").addEventListener('click', () => {
   if (item_number2.value != '') {
-    item_number2.value = '';
-    title.innerText = "１つ目品番";
+    clearInputs([item_number2]);
   } else if (item_number1.value != '') {
-    item_number1.value = '';
+    clearInputs([item_number1]);
+    item_number2_block.style.visibility = 'hidden';
+    title.innerText = "１つ目品番";
   } else {
     location.href = "./index.php";
   }

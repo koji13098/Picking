@@ -66,6 +66,10 @@ form {
   margin: 0 0 20px;
 }
 
+.item-number2 {
+  visibility: hidden;
+}
+
 .main .value {
   background-color: #eee;
 }
