@@ -1,6 +1,5 @@
 body {
-  /* width: 400px; */
-  /* font-size: 30px; */
+  font-size: 1.5em;
   max-width: 400px;
 }
 
@@ -14,6 +13,7 @@ header {
   background-color: aquamarine;
   text-align: center;
   font-weight: normal;
+  margin: 10px 0;
 }
 
 footer {
@@ -27,10 +27,18 @@ button {
   margin: 10px 20px;
 }
 
+.btn-yes-no {
+  display: block;
+}
+
 .input {
   background-color: #ffc;
   border-style: hidden;
   margin: 20px 0 20px;
+}
+
+form {
+  margin-block-end: 0;
 }
 
 .read-list-form {
@@ -56,6 +64,10 @@ button {
 #item-number1,
 #item-number2 {
   margin: 0 0 20px;
+}
+
+.item-number2 {
+  visibility: hidden;
 }
 
 .main .value {
@@ -123,10 +135,10 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 200px;
-  height: 250px;
+  width: 250px;
+  height: 350px;
   padding: 30px 20px;
-  margin: 50px;
+  margin: 30px;
   background-color: #fff;
   border: 1px solid #000;
   box-shadow: 1px 1px #000;
