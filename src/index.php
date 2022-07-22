@@ -28,6 +28,9 @@ session_destroy();
         <li>
             <a href="timeCard.html">時間計算</a>
         </li>
+        <li>
+            <a href="timeCalculator.html">時間計算表</a>
+        </li>
     </ol>
 </body>
 
