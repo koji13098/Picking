@@ -38,7 +38,8 @@ button {
 .input {
   background-color: #ffc;
   border-style: hidden;
-  margin: 20px 0 20px;
+  margin: 20px 10px 20px;
+  font-size: 20px;
 }
 
 form {
@@ -154,4 +155,45 @@ form {
 
 .popup-show {
   display: flex;
+}
+
+.time-card {
+  text-align: center;
+}
+
+.time-card>* {
+  margin: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: center;
+  border: solid 1px;
+  padding: 5px 5px;
+  font-size: 16px;
+  width: auto;
+}
+
+th {
+  font-weight: normal;
+}
+
+td>button {
+  padding: 3px;
+  margin: 0 3px;
+}
+
+td>input[type="time"] {
+  width: 60px;
+}
+
+td>input[type="number"],
+td>input[type="text"] {
+  width: 40px;
+  font-size: 17px;
 }

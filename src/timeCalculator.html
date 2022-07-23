@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <title>時間計算</title>
+</head>
+
+<body>
+  <header>時間計算</header>
+  <div class="title">計算表</div>
+  <table id="timeTable">
+    <tr>
+      <th>開始</th>
+      <th></th>
+      <th>終了</th>
+      <th>休憩</th>
+      <th>時間(分)</th>
+      <th></th>
+    </tr>
+    <tr class="time">
+      <td><input type="time" class="start-time"></td>
+      <td>～</td>
+      <td><input type="time" class="end-time"></td>
+      <td><input type="number" class="break-time" placeholder="0"></td>
+      <td><input type="text" class="result" placeholder="分" readonly></td>
+      <td><button onclick="deleteRow(this)">削除</button></td>
+    </tr>
+  </table>
+  <button id="addTime">追加</button>
+  <button id="calculate">計算する</button>
+  <div>合計<input type="text" class="input" id="resultSum" readonly></div>
+  <button id="reset">リセット</button>
+  <footer>
+    <button class="button" id="js-quit"><a href="./index.php">戻る</a></button>
+  </footer>
+
+  <script src="./lib/timeCalculator.js"></script>
+</body>
+
+</html>
