@@ -23,22 +23,28 @@
     return resultSum;
   }
 
+  document.getElementById("addTime").addEventListener("click", () => {
+    const trs = document.querySelectorAll(".time");
+    const trLast = trs[trs.length - 1].cloneNode(true);
+    const inputs = trLast.querySelectorAll("input");
+    for (let i = 0; i < inputs.length; i++) {
+      if (i == 0) {
+        inputs[i].value = inputs[i + 1].value;
+      } else {
+        inputs[i].value = '';
+      }
+    }
+    document.getElementById("timeTable").querySelector("tbody").appendChild(trLast);
+  });
+
   document.getElementById("calculate").addEventListener("click", () => {
     sumTime.value = calculateTime() + "分";
-  })
+  });
 
 })();
 
-function insertRow(tableId, row) {
-  var tr = document.querySelector(row).cloneNode(true);
-  tr.querySelectorAll("input").forEach(input => {
-    input.value = '';
-  });
-  document.getElementById(tableId).querySelector("tbody").appendChild(tr);
-}
-
 function deleteRow(obj) {
-  tr = obj.parentNode.parentNode;
+  const tr = obj.parentNode.parentNode;
   if (tr.parentNode.rows.length > 2) {
     tr.parentNode.deleteRow(tr.sectionRowIndex);
   }
