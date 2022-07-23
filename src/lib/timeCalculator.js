@@ -1,6 +1,6 @@
 (() => {
 
-  const timeTable = document.getElementById("time-table");
+  const timeTable = document.getElementById("timeTable");
   const sumTime = document.getElementById("resultSum");
 
   function calculateTime() {
@@ -30,7 +30,7 @@
     for (let i = 0; i < inputs.length; i++) {
       if (i == 0) {
         inputs[i].value = inputs[i + 1].value;
-      } else {
+      } else if (i != 1) {
         inputs[i].value = '';
       }
     }
@@ -39,6 +39,15 @@
 
   document.getElementById("calculate").addEventListener("click", () => {
     sumTime.value = calculateTime() + "分";
+  });
+
+  document.getElementById("reset").addEventListener("click", () => {
+    document.querySelectorAll("input").forEach(input => {
+      input.value = '';
+    });
+    while (timeTable.querySelectorAll(".time").length > 1) {
+      timeTable.deleteRow(-1);
+    }
   });
 
 })();
