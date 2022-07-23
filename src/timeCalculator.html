@@ -25,14 +25,14 @@
       <td><input type="time" class="start-time"></td>
       <td>～</td>
       <td><input type="time" class="end-time"></td>
-      <td><input type="number" class="break-time"></td>
-      <td><input type="text" class="result" readonly></td>
+      <td><input type="number" class="break-time" placeholder="0"></td>
+      <td><input type="text" class="result" placeholder="分" readonly></td>
       <td><button onclick="deleteRow(this)">削除</button></td>
     </tr>
   </table>
   <button onclick="insertRow('time-table', '.time')">追加</button>
   <button id="calculate">計算する</button>
-  <div>合計<input type="text" id="resultSum" readonly></div>
+  <div>合計<input type="text" class="input" id="resultSum" readonly></div>
   <footer>
     <button class="button" id="js-quit"><a href="./index.php">戻る</a></button>
   </footer>
