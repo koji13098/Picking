@@ -49,8 +49,9 @@ fclose($file);
   <header>意見・要望</header>
   <div class="new-forum">
     <div class="title">新規投稿</div>
+    <p>※個人を特定できるようなことを書かないようにお願いします。</p>
     <form action="#" method="post" onsubmit="return confirm('送信しますか？')">
-      <textarea name="text" cols="50" rows="5" wrap="hard"></textarea>
+      <textarea name="text" cols="40" rows="5" wrap="hard"></textarea>
       <input type="submit" value="送信">
       <input type="hidden" name="token">
     </form>

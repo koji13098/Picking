@@ -202,6 +202,20 @@ td>input[type="text"] {
   font-size: 17px;
 }
 
+.new-forum>p {
+  font-size: 15px;
+  color: #f00;
+  margin: 10px;
+}
+
+.new-forum>form {
+  margin: 10px;
+}
+
+.new-forum>form>input {
+  margin: 10px;
+}
+
 .forum-list>ul {
   margin: 10px;
   padding: 0 0 50px 0;
