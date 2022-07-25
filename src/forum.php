@@ -9,8 +9,10 @@ function escape($str): string
 
 function getMessages($link): array
 {
+  $messages = [];
   $sql = 'SELECT id, text, timestamp FROM forum';
-  if (!($result = mysqli_query($link, $sql))) {
+  $result = mysqli_query($link, $sql);
+  if (!$result) {
     error_log("Error: " . mysqli_error($link));
     return ['投稿一覧を取得できませんでした'];
   }
