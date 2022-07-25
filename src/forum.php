@@ -77,7 +77,7 @@ mysqli_close($link);
         <?php foreach ($messages as $message) : ?>
           <li>
             <div class="forum-header">
-              <?= escape($message['id']) ?>.&nbsp;<?= escape($message['timestamp']) ?>
+              <?= escape(($message['id'] - 4) / 10) ?>.&nbsp;<?= escape($message['timestamp']) ?>
             </div>
             <div class="forum-text">
               <?= escape($message['text']) ?>
