@@ -233,11 +233,10 @@ td>input[type="text"] {
 }
 
 .forum-text {
-  margin: 5px;
+  margin: 0 5px 5px;
 }
 
-.forum-date {
-  text-align: right;
-  margin: 0 0 5px;
+.forum-header {
+  margin: 3px 5px;
   font-size: 10px;
 }
