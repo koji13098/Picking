@@ -14,6 +14,7 @@
   <div class="title">計算表</div>
   <table id="timeTable">
     <tr>
+      <th>作業No.</th>
       <th>開始</th>
       <th></th>
       <th>終了</th>
@@ -22,6 +23,12 @@
       <th></th>
     </tr>
     <tr class="time">
+      <td>
+        <select class="job-num">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </td>
       <td><input type="time" class="start-time"></td>
       <td>～</td>
       <td><input type="time" class="end-time"></td>
@@ -32,7 +39,11 @@
   </table>
   <button id="addTime">追加</button>
   <button id="calculate">計算する</button>
-  <div>合計<input type="text" class="input" id="resultSum" readonly></div>
+  <div class="job-sum">各作業合計
+    <div>No.1<input type="text" class="input" id="result1" readonly></div>
+    <div>No.2<input type="text" class="input" id="result2" readonly></div>
+    <div>全合計<input type="text" class="input" id="resultSum" readonly></div>
+  </div>
   <button id="reset">リセット</button>
   <footer>
     <button class="button" id="js-quit"><a href="./index.php">戻る</a></button>
