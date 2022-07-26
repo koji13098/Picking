@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/lib/mysqli.php';
 
+date_default_timezone_set("Asia/Tokyo");
+
 function escape($str): string
 {
   return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -26,11 +28,21 @@ session_start();
 
 $text = (string)filter_input(INPUT_POST, 'text');
 $token = (string)filter_input(INPUT_POST, 'token');
+$datetime = date("Y-m-d H:i:s");
 
 $link = dbConnect();
+$link->set_charset("utf8");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $text && sha1(session_id() === $token)) {
-  $sql = 'INSERT INTO forum (text) VALUES ("' . $text . '")';
+  $sql = <<<EOT
+  INSERT INTO forum (
+    text,
+    timestamp
+  ) VALUES (
+    "{$text}",
+    "{$datetime}"
+  );
+  EOT;
 
   if (!($result = mysqli_query($link, $sql))) {
     error_log("Error: " . mysqli_error($link));
