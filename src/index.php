@@ -31,6 +31,9 @@ session_destroy();
         <li>
             <a href="timeCalculator.html">時間計算表</a>
         </li>
+        <li>
+            <a href="forum.php">意見・要望</a>
+        </li>
     </ol>
 </body>
 

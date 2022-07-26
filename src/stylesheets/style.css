@@ -21,9 +21,13 @@ header {
 }
 
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
   background-color: aquamarine;
   display: flex;
   margin: 15px 0;
+  z-index: 3;
 }
 
 button {
@@ -196,4 +200,43 @@ td>input[type="number"],
 td>input[type="text"] {
   width: 40px;
   font-size: 17px;
+}
+
+.new-forum>p {
+  font-size: 15px;
+  color: #f00;
+  margin: 10px;
+}
+
+.new-forum>form {
+  margin: 10px;
+}
+
+.new-forum>form>input {
+  margin: 10px;
+}
+
+.forum-list>ul {
+  margin: 10px;
+  padding: 0 0 50px 0;
+}
+
+.forum-list>ul>li {
+  list-style: none;
+  margin: 15px 0;
+  min-height: 20px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forum-text {
+  margin: 0 5px 5px;
+}
+
+.forum-header {
+  margin: 3px 5px;
+  font-size: 10px;
 }
