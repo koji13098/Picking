@@ -15,8 +15,6 @@
     let result2 = 0;
     let resultSum = 0;
 
-    console.log(jobNum);
-
     for (let i = 0; i < timeTable.rows.length - 1; i++) {
       if (startTime[i].value != '' || endTime[i].value != '') {
         let sumMinute = parseInt(endTime[i].value.substr(3, 2)) - parseInt(startTime[i].value.substr(3, 2));
@@ -24,9 +22,9 @@
         sum = sumHour * 60 + sumMinute - breakTime[i].value;
         result[i].value = sum;
         resultSum += sum;
-        if (jobNum[i] == 1) {
+        if (jobNum[i].value == 1) {
           result1 += sum;
-        } else if (jobNum[i] == 2) {
+        } else if (jobNum[i].value == 2) {
           result2 += sum;
         }
       }
@@ -43,13 +41,14 @@
     const trs = document.querySelectorAll(".time");
     const trLast = trs[trs.length - 1].cloneNode(true);
     const inputs = trLast.querySelectorAll("input");
-    for (let i = 0; i < inputs.length; i++) {
-      if (i == 0) {
-        inputs[i].value = inputs[i + 1].value;
-      } else if (i != 1) {
-        inputs[i].value = '';
+    inputs.forEach(input => {
+      console.log(input.className);
+      if (input.className == "start-time") {
+        input.value = trLast.querySelector(".end-time").value;
+      } else {
+        input.value = "";
       }
-    }
+    });
     document.getElementById("timeTable").querySelector("tbody").appendChild(trLast);
   });
 

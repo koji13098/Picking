@@ -10,43 +10,46 @@
 </head>
 
 <body>
-  <header>時間計算</header>
-  <div class="title">計算表</div>
+  <header>時間計算表</header>
+  <div class="title">時間表</div>
   <table id="timeTable">
     <tr>
       <th>作業No.</th>
       <th>開始</th>
       <th></th>
       <th>終了</th>
-      <th>休憩</th>
+      <th>休憩(分)</th>
       <th>時間(分)</th>
       <th></th>
     </tr>
     <tr class="time">
-      <td>
-        <select class="job-num">
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-      </td>
+      <td><input type="number" class="job-num" pattern="\d*"></td>
       <td><input type="time" class="start-time"></td>
       <td>～</td>
       <td><input type="time" class="end-time"></td>
-      <td><input type="number" class="break-time" placeholder="0"></td>
+      <td><input type="number" class="break-time" pattern="\d*" placeholder="0"></td>
       <td><input type="text" class="result" placeholder="分" readonly></td>
       <td><button onclick="deleteRow(this)">削除</button></td>
     </tr>
   </table>
   <button id="addTime">追加</button>
   <button id="calculate">計算する</button>
-  <div class="job-sum">各作業合計
-    <div>No.1<input type="text" class="input" id="result1" readonly></div>
-    <div>No.2<input type="text" class="input" id="result2" readonly></div>
-    <div>全合計<input type="text" class="input" id="resultSum" readonly></div>
-  </div>
-  <button id="reset">リセット</button>
+  <div class="title">各作業合計</div>
+  <table class="job-sum">
+    <tr>
+      <th>No.1</th>
+      <th>No.2</th>
+      <th>全合計</th>
+    </tr>
+    <tr>
+      <td><input type="text" class="input result-sum" id="result1" readonly></td>
+      <td><input type="text" class="input result-sum" id="result2" readonly></td>
+      <td><input type="text" class="input result-sum" id="resultSum" readonly></td>
+    </tr>
+  </table>
   <footer>
     <button class="button" id="js-quit"><a href="./index.php">戻る</a></button>
+    <button id="reset">リセット</button>
   </footer>
 
   <script src="./lib/timeCalculator.js"></script>
