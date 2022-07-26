@@ -1,13 +1,18 @@
 (() => {
 
   const timeTable = document.getElementById("timeTable");
-  const sumTime = document.getElementById("resultSum");
+  const sumTime1 = document.getElementById("result1");
+  const sumTime2 = document.getElementById("result2");
+  const sumTimeAll = document.getElementById("resultSum");
 
   function calculateTime() {
+    let jobNum = document.querySelectorAll(".job-num");
     let startTime = document.querySelectorAll(".start-time");
     let endTime = document.querySelectorAll(".end-time");
     let breakTime = document.querySelectorAll(".break-time");
     let result = document.querySelectorAll(".result");
+    let result1 = 0;
+    let result2 = 0;
     let resultSum = 0;
 
     for (let i = 0; i < timeTable.rows.length - 1; i++) {
@@ -17,28 +22,42 @@
         sum = sumHour * 60 + sumMinute - breakTime[i].value;
         result[i].value = sum;
         resultSum += sum;
+        if (jobNum[i].value == 1) {
+          result1 += sum;
+        } else if (jobNum[i].value == 2) {
+          result2 += sum;
+        }
       }
     }
 
-    return resultSum;
+    return {
+      result1: result1,
+      result2: result2,
+      resultSum: resultSum
+    };
   }
 
   document.getElementById("addTime").addEventListener("click", () => {
     const trs = document.querySelectorAll(".time");
     const trLast = trs[trs.length - 1].cloneNode(true);
     const inputs = trLast.querySelectorAll("input");
-    for (let i = 0; i < inputs.length; i++) {
-      if (i == 0) {
-        inputs[i].value = inputs[i + 1].value;
-      } else if (i != 1) {
-        inputs[i].value = '';
+    inputs.forEach(input => {
+      console.log(input.className);
+      if (input.className == "start-time") {
+        input.value = trLast.querySelector(".end-time").value;
+      } else {
+        input.value = "";
       }
-    }
+    });
     document.getElementById("timeTable").querySelector("tbody").appendChild(trLast);
   });
 
   document.getElementById("calculate").addEventListener("click", () => {
-    sumTime.value = calculateTime() + "分";
+    let resultTime = calculateTime();
+    console.log(resultTime);
+    sumTime1.value = resultTime.result1 + "分";
+    sumTime2.value = resultTime.result2 + "分";
+    sumTimeAll.value = resultTime.resultSum + "分";
   });
 
   document.getElementById("reset").addEventListener("click", () => {

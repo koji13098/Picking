@@ -1,6 +1,7 @@
 body {
   font-size: 1.5em;
   max-width: 400px;
+  padding: 0 0 80px;
 }
 
 li {
@@ -192,14 +193,28 @@ td>button {
   margin: 0 3px;
 }
 
-td>input[type="time"] {
+.start-time,
+.end-time {
   width: 60px;
 }
 
-td>input[type="number"],
-td>input[type="text"] {
-  width: 40px;
+.job-num {
+  width: 15px;
   font-size: 17px;
+}
+
+.result {
+  width: 30px;
+  font-size: 17px;
+}
+
+.break-time {
+  width: 30px;
+  font-size: 17px;
+}
+
+.result-sum {
+  width: 60px;
 }
 
 .new-forum>p {
