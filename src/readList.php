@@ -22,11 +22,36 @@ function getPickList($link, string $invoiceNum): mysqli_result
     $pickList = mysqli_query($link, $sql);
     if (!$pickList) {
         echo "<script>alert('データを取得できませんでした');</script>";
-        echo 'Error: ' . mysqli_error($link);
+        error_log('Error: ' . mysqli_error($link));
         exit();
     }
 
     return $pickList;
+}
+
+function getInvoices($link)
+{
+    $invoices = [];
+    $sql = <<<EOT
+    SELECT
+        invoice
+    FROM
+        orders
+    GROUP BY
+        invoice
+    ;
+    EOT;
+
+    $result = mysqli_query($link, $sql);
+    if (!$result) {
+        $invoices[] = 'Error: データを取得できませんでした';
+        error_log('Error: ' . mysqli_error($link));
+    } else {
+        while ($data = mysqli_fetch_assoc($result)) {
+            $invoices[] = $data['invoice'];
+        }
+    }
+    return $invoices;
 }
 
 $link = dbConnect();
@@ -61,6 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['invoiceNumbers'] = [];
     $_SESSION['pickingLists'] = [];
 }
+
+$invoices = getInvoices($link);
+
 mysqli_close($link);
 
 ?>
@@ -96,6 +124,19 @@ mysqli_close($link);
             <button type="submit">ピッキング</button>
         </form>
     </footer>
+    <hr>
+    <div>
+        <p>現在登録されている送り状番号は</p>
+        <?php if (count($invoices) > 0) : ?>
+            <ul>
+                <?php foreach ($invoices as $invoice) : ?>
+                    <li><?= $invoice ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else : ?>
+            <p>ありません。</p>
+        <?php endif; ?>
+    </div>
     <script src="lib/popup.js"></script>
 </body>
 
