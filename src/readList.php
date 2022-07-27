@@ -125,7 +125,8 @@ mysqli_close($link);
         </form>
     </footer>
     <hr>
-    <div>
+    <div class="notes">
+        <p><strong>※実際の送り状番号とは関係ありません</strong></p>
         <p>現在登録されている送り状番号は</p>
         <?php if (count($invoices) > 0) : ?>
             <ul>
