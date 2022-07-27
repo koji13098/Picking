@@ -26,7 +26,7 @@ session_destroy();
             <a href="awase.html">検品DBチェックなし</a>
         </li>
         <li>
-            <a href="timeCard.html">時間計算</a>
+            <a>(削除しました)</a>
         </li>
         <li>
             <a href="timeCalculator.html">時間計算表</a>
