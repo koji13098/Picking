@@ -12,11 +12,29 @@ session_destroy();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>一覧</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>検品システム</title>
 </head>
 
 <body>
-    <a href="readList.php">ピッキング</a>
+    <header>検品システム v0.1</header>
+    <ol>
+        <li>
+            <a href="readList.php">ピッキング</a>
+        </li>
+        <li>
+            <a href="awase.html">検品DBチェックなし</a>
+        </li>
+        <li>
+            <a>(削除しました)</a>
+        </li>
+        <li>
+            <a href="timeCalculator.html">時間計算表</a>
+        </li>
+        <li>
+            <a href="forum.php">意見・要望</a>
+        </li>
+    </ol>
 </body>
 
 </html>

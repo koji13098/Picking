@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <title>時間計算</title>
+</head>
+
+<body>
+  <header>時間計算</header>
+  <div class="title">分</div>
+  <div class="main time-card">
+    <div class="start-time">
+      <div>開始</div>
+      <input type="time" id="js-start">
+    </div>
+    <div class="end-time">
+      <div>終了</div>
+      <input type="time" id="js-end">
+    </div>
+    <div class="break-time">
+      <div>休憩</div>
+      <input type="number" id="js-break" placeholder="分">
+    </div>
+    <button id="js-calculate">計算する</button>
+    <button id="js-reset">リセット</button>
+  </div>
+  <footer>
+    <button class="button" id="js-quit"><a href="./index.php">戻る</a></button>
+  </footer>
+
+  <script src="./lib/timeCard.js"></script>
+</body>
+
+</html>

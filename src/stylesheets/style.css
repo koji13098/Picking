@@ -1,0 +1,265 @@
+body {
+  font-size: 1.5em;
+  max-width: 400px;
+  padding: 0 0 80px;
+}
+
+li {
+  margin: 30px;
+}
+
+header {
+  background-color: #0000ff;
+  color: white;
+  text-align: center;
+}
+
+.title {
+  background-color: aquamarine;
+  text-align: center;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: aquamarine;
+  display: flex;
+  margin: 15px 0;
+  z-index: 3;
+}
+
+button {
+  padding: 0 10px;
+  margin: 10px 20px;
+}
+
+.btn-yes-no {
+  display: block;
+}
+
+.input {
+  background-color: #ffc;
+  border-style: hidden;
+  margin: 20px 10px 20px;
+  font-size: 20px;
+}
+
+form {
+  margin-block-end: 0;
+}
+
+.read-list-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.read-list-form>* {
+  margin: 10px;
+}
+
+.pick-num {
+  text-align: right;
+}
+
+.item_number {
+  display: flex;
+  justify-content: space-between;
+}
+
+#item-number1,
+#item-number2 {
+  margin: 0 0 20px;
+}
+
+.item-number2 {
+  visibility: hidden;
+}
+
+.main .value {
+  background-color: #eee;
+}
+
+.location-amount {
+  display: flex;
+}
+
+.location {
+  flex: 1;
+}
+
+.amount {
+  text-align: right;
+  flex: 1;
+}
+
+.video {
+  margin: 0;
+  padding: 0;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 10;
+}
+
+.complete {
+  display: none;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #0f0;
+  z-index: 5;
+}
+
+.incorrect {
+  display: none;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: orange;
+  z-index: 5;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 350px;
+  padding: 30px 20px;
+  margin: 30px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: 1px 1px #000;
+}
+
+.popup-correct {}
+
+.popup-incorrect {}
+
+.popup-show {
+  display: flex;
+}
+
+.time-card {
+  text-align: center;
+}
+
+.time-card>* {
+  margin: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: center;
+  border: solid 1px;
+  padding: 5px 5px;
+  font-size: 16px;
+  width: auto;
+}
+
+th {
+  font-weight: normal;
+}
+
+td>button {
+  padding: 3px;
+  margin: 0 3px;
+}
+
+.start-time,
+.end-time {
+  width: 60px;
+}
+
+.job-num {
+  width: 15px;
+  font-size: 17px;
+}
+
+.result {
+  width: 30px;
+  font-size: 17px;
+}
+
+.break-time {
+  width: 30px;
+  font-size: 17px;
+}
+
+.result-sum {
+  width: 60px;
+}
+
+.new-forum>p {
+  font-size: 15px;
+  color: #f00;
+  margin: 10px;
+}
+
+.new-forum>form {
+  margin: 10px;
+}
+
+.new-forum>form>input {
+  margin: 10px;
+}
+
+.forum-list>ul {
+  margin: 10px;
+  padding: 0 0 50px 0;
+}
+
+.forum-list>ul>li {
+  list-style: none;
+  margin: 15px 0;
+  min-height: 20px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forum-text {
+  margin: 0 5px 5px;
+}
+
+.forum-header {
+  margin: 3px 5px;
+  font-size: 10px;
+}
+
+.notes {
+  font-size: 17px;
+}
+
+.notes>p>strong {
+  color: #f00;
+}

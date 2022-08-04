@@ -2,3 +2,4 @@
 /docker/db/mysql
 /src/tmp
 /src/.env
+/src/*.csv
